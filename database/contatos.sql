@@ -18,8 +18,8 @@ USE `contatos` ;
 -- Table `contatos`.`usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contatos`.`usuarios` (
-  `id` INT NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL unique,
   `senha` VARCHAR(256) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- Table `contatos`.`contatos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contatos`.`contatos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `usuarios_id` INT NOT NULL,
@@ -48,7 +48,7 @@ ENGINE = InnoDB;
 -- Table `contatos`.`telefones`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contatos`.`telefones` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `numero` VARCHAR(25) NOT NULL,
   `contatos_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- Table `contatos`.`amizades`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contatos`.`amizades` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuarios1_id` INT NOT NULL,
   `usuarios2_id` INT NOT NULL,
   PRIMARY KEY (`id`),
